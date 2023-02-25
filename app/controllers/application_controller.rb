@@ -6,10 +6,19 @@ class ApplicationController < ActionController::Base
 
   def calculate_square
     
-    # params = {"elephant"=>"42"}
-    
     @num = params.fetch("elephant").to_f
     @square_of_num = @num ** 2
     render({:template =>"calculation_templates/square_results.html.erb"})
+  end
+
+  def calculate_random
+    @lower = params.fetch("user_min").to_f
+    @upper = params.fetch("user_max").to_f
+    @result = rand(@lower..@upper)
+      render({ :template =>"calculation_templates/rand_results.html.erb"})
+  end
+
+  def calculate_random_new
+    render({:template =>"calculation_templates/random_new.html.erb"})
   end
 end
