@@ -21,4 +21,18 @@ class ApplicationController < ActionController::Base
   def calculate_random_new
     render({:template =>"calculation_templates/random_new.html.erb"})
   end
+
+  def calculate_root_new
+    render({:template =>"calculation_templates/root_new.html.erb"})
+  end
+  
+  def calculate_payment_new
+    
+     render({:template =>"calculation_templates/payment_new.html.erb"})
+  end
+
+  def calculate_root_results
+    @num = params.fetch("user_number").to_f
+    render({:template =>"calculation_templates/root_results.html.erb"})
+  end
 end
