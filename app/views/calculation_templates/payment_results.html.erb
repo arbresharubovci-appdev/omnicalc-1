@@ -3,16 +3,16 @@
 
 <dl>
   <dt>APR</dt>
-  <dd><%=@num1%></dd>
+  <dd><%= number_to_percentage(@apr, precision: 4)%></dd>
 
   <dt> Number of years</dt>
-  <dd><%=@num2%></dd>
+  <dd><%=@years%></dd>
 
   <dt>Principal</dt>
-  <dd><%=@num3.to_s(:currency)%></dd>
+  <dd><%=@principal.to_s(:currency)%></dd>
 
   <dt>Payment</dt>
-  <dd><%=@done%></dd>
+  <dd><%=@monthly_payment.round(4).to_s(:currency)%></dd>
 </dl>
 
 <a href="/payment/new">Calculate another payment</a>
